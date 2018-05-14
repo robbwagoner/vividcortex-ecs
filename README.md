@@ -1,9 +1,11 @@
 # VividCortex ECS Container
 
-Run VividCortex Agent in an ECS container with access to SSM Parameter Store via Chamber.
+Run VividCortex Agent in an ECS container with access to SSM Parameter Store via [Chamber][2].
 See VividCortex's docs on a [containerized installation][1].
 
+
 [1]: https://docs.vividcortex.com/getting-started/containerized-installation/
+[2]: https://github.com/segmentio/chamber
 
 ----
 ## AWS Systems Manager Parameter Store
@@ -37,9 +39,9 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 AWS CodeBuild can be used to build and push to Elastic Container Repository (ECR).
 
-The following BuildProject in-line buildspec.yml can be used (which is based upon [AWS ECS CD Pipeline docs][2]):
+The following BuildProject in-line buildspec.yml can be used (which is based upon [AWS ECS CD Pipeline docs][3]):
 
-[2]: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-cd-pipeline.html
+[3]: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-cd-pipeline.html
 
 ```yaml
 version: 0.2

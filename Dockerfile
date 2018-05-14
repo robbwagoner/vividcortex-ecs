@@ -8,7 +8,7 @@ ARG VC_ENABLE_RDS_OFFHOST=1
 # verify VC_API_TOKEN set (required for installing the agent)
 # openssl for https
 # download, install
-# remove sensitive data from the image
+# remove API Token from the image
 
 RUN test -n "${VC_API_TOKEN}" && apk update && apk add --no-cache openssl ca-certificates curl && \
     curl -O https://download.vividcortex.com/install && \
@@ -39,5 +39,4 @@ ENV chamber_service prod-vividcortex
 ENV CHAMBER_KMS_KEY_ALIAS parameter_store_key
 
 WORKDIR /
-ENTRYPOINT ["/usr/local/bin/vividcortex","-foreground","-forbid-restarts","-log-type=stderr","-drv-mysql-query-capture=poll"]
 ENTRYPOINT ["/usr/local/bin/vividcortex","-foreground","-forbid-restarts","-log-type=file","-drv-mysql-query-capture=poll"]
