@@ -40,3 +40,4 @@ ENV CHAMBER_KMS_KEY_ALIAS parameter_store_key
 
 WORKDIR /
 ENTRYPOINT ["/usr/local/bin/vividcortex","-foreground","-forbid-restarts","-log-type=stderr","-drv-mysql-query-capture=poll"]
+ENTRYPOINT ["/usr/local/bin/vividcortex","-foreground","-forbid-restarts","-log-type=file","-drv-mysql-query-capture=poll"]
