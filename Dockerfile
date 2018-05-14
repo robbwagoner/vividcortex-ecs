@@ -12,7 +12,7 @@ ARG VC_ENABLE_RDS_OFFHOST=1
 
 RUN test -n "${VC_API_TOKEN}" && apk update && apk add --no-cache openssl ca-certificates curl && \
     curl -O https://download.vividcortex.com/install && \
-    sh install --token=${VC_API_TOKEN} --batch --init=None --static --proxy=dyn --skip-certs --off-host && \
+    sh install --token=${VC_API_TOKEN} --batch --init=None --static --proxy=dyn --skip-certs && \
     sed -i -e '/api-token/d' /etc/vividcortex/global.conf
 
 RUN test -n "${VC_ENABLE_RDS_OFFHOST}" && \
