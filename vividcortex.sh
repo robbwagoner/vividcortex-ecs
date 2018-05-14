@@ -9,6 +9,6 @@ alias chmbr='/usr/local/bin/chamber read -q ${chamber_service}'
 
 export VC_API_TOKEN="$(chmbr agent-api-token)"
 export VC_HOSTNAME="$(chmbr agent-hostname)"
-export VC_DRV_MANUAL_HOST_URI=$(chmbr database-urls)
+export VC_DRV_MANUAL_HOST_URI="$(chmbr database-urls)"
 
 /usr/local/bin/vc-agent-007 ${@}
